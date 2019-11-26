@@ -1,5 +1,6 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
     entry: ['babel-polyfill', './src/main.js'],    // 项目的入口文件，webpack会从main.js开始，把所有依赖的js都加载打包
@@ -27,23 +28,11 @@ module.exports = {
                 ]
             },
             {
-                test: /\.scss$/,
+                test: /\.(scss|sass)$/,
                 use: [
                     'vue-style-loader',
                     'css-loader',
                     'sass-loader'
-                ]
-            },
-            // {
-            //     test: /\.sass$/,
-            //     loaders: ['style', 'css', 'sass']
-            // },
-            {
-                test: /\.sass$/,
-                use: [
-                    'vue-style-loader',
-                    'css-loader',
-                    'sass-loader?indentedSyntax'
                 ]
             },
             {
@@ -60,23 +49,13 @@ module.exports = {
             },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader',
-                options: {
-                    loaders: {
-                        'scss': [
-                            'vue-style-loader',
-                            'css-loader',
-                            'scss-loader'
-                        ],
-                        'sass': [
-                            'vue-style-loader',
-                            'css-loader',
-                            'sass-loader'
-                        ]
-                    }
-                }
+                loader: 'vue-loader'
             }
             
         ],
-    }
+    },
+    plugins: [
+        // make sure to include the plugin!
+        new VueLoaderPlugin()
+    ]
 };

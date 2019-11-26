@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>{{ msg }}</h1>
-    <img src="./img/logo.png">
+    <img src="/img/logo.png">
     <input type="text" v-model="msg">
   </div>
 </template>
