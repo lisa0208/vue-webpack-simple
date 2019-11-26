@@ -1,0 +1,36 @@
+{
+  "name": "vue-webpack-simple",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack-dev-server --open --hot",
+    "build": "webpack --progress --hide-modules"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.7.2",
+    "babel": "^6.23.0",
+    "vue": "^2.6.10",
+    "webpack-cli": "^3.3.10"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.7.1",
+    "@babel/preset-stage-3": "^7.0.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.6",
+    "babel-polyfill": "^6.26.0",
+    "css-loader": "^3.2.0",
+    "file-loader": "^4.2.0",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "vue-loader": "^15.7.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.41.2",
+    "webpack-dev-server": "^3.9.0"
+  }
+}
